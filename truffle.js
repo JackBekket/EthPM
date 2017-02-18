@@ -1,18 +1,52 @@
-var HDWalletProvider = require("truffle-hdwallet-provider");
+const HDWalletProvider = require("truffle-hdwallet-provider")
+const fs = require("fs")
 
-// 12-word mnemonic
-var mnemonic = "rift saddling evade tutor escapade helper emboss safely scheme refusal flashback deeply";
+// First read in the secrets.json to get our mnemonic
+let secrets
+let mnemonic
+if(fs.existsSync("secrets.json")) {
+  secrets = JSON.parse(fs.readFileSync("secrets.json", "utf8"))
+  mnemonic = secrets.mnemonic
+} else {
+  console.log("No secrets.json found. If you are trying to publish EPM " +
+              "this will fail. Otherwise, you can ignore this message!")
+  mnemonic = ""
+}
 
 module.exports = {
+  rpc: {
+    host: "localhost",
+    port: 8545
+  },
   networks: {
-    development: {
-      host: "localhost",
-      port: 8545,
-      network_id: "*" // Match any network id
+    /**
+    live: {
+      network_id: 1, // Ethereum public network
+      // optional config values
+      // host - defaults to "localhost"
+      // port - defaults to 8545
+      // gas
+      // gasPrice
+      // from - default address to use for any transaction Truffle makes during migrations
     },
+    morden: {
+      network_id: 2,
+      host: "https://morden.infura.io",
+    },
+    **/
     ropsten: {
-      provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/"),
-      network_id: 3 // official id of the ropsten network
+      provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/eqNBeB5BnmWDM48Ea03Z"),
+      network_id: "3"
     }
+    /**
+    ,
+
+    testrpc: {
+      network_id: "default"
+    },
+    test: { //truffle test hardcodes the "test" network.
+      network_id: "default",
+    }
+    **/
   }
 };
