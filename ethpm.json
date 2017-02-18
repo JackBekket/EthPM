@@ -10,7 +10,7 @@
     "addition"
   ],
   "dependencies": {
-    "owned": "^0.0.1"
+    "example-package-owned": "^1.0.0"
   },
-//  "license": "MIT"
+    "license": ""
 }
