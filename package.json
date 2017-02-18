@@ -1,0 +1,32 @@
+{
+  "name": "ethpm",
+  "version": "0.0.1",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle-hdwallet-provider": "0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackBekket/EthPM.git"
+  },
+  "keywords": [
+    "ethereum",
+    "package",
+    "manager",
+    "test"
+  ],
+  "author": "Sergey Ponomarev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackBekket/EthPM/issues"
+  },
+  "homepage": "https://github.com/JackBekket/EthPM#readme"
+}
