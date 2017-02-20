@@ -12,5 +12,5 @@
   "dependencies": {
     "example-package-owned": "^1.0.0"
   },
-    "license": ""
+    "license": "MIT"
 }
