@@ -33,9 +33,11 @@ module.exports = {
       network_id: 2,
       host: "https://morden.infura.io",
     },
+    
     **/
     ropsten: {
-      provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/eqNBeB5BnmWDM48Ea03Z"),
+      provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/"),
+      gas: "30000",
       network_id: "3"
     }
     /**
